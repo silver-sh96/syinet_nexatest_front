@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="Application_Desktop" screenid="Desktop_screen">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="true" left="0" top="0" width="1280" height="720">
+        <ChildFrame id="ChildFrame00" formurl="Base::userList.xfdl" showtitlebar="false"/>
+      </MainFrame>
+    </Layout>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[
+this.ds_userList_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{	
+	trace(e.newvalue);
+	console.log(e.newvalue);
+		// chk 컬럼인 경우
+	if(e.columnid == "chk") {
+		// 다른 이벤트가 동작하지 않도록 설정
+		obj.enableevent = false;  //false can stop event temporarily  
+		// 변경된 값이 1(체크가 된 경우)인경우
+		if(e.newvalue == '1') {
+			// 1인 경우 Dataset의 chk 값을 Y로 변경
+			obj.setColumn(e.row,"chk",'Y');
+		} else if(e.newvalue == '0') {
+			// 0인 경우 Dataset의 chk 값을 N로 변경
+			obj.setColumn(e.row,"chk",'N');  
+		}
+		// 다시 이벤트가 정상 동작하도록 설정
+		obj.enableevent = true;
+	}
+};]]></Script>
+</ADL>

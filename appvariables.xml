@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppVariables version="2.0">
+  <Datasets>
+    <Dataset id="Dataset01">
+      <ColumnInfo>
+        <Column id="userFirstName" type="STRING" size="256"/>
+        <Column id="userMiddleName" type="STRING" size="256"/>
+        <Column id="userId" type="STRING" size="256"/>
+        <Column id="userPw" type="STRING" size="256"/>
+        <Column id="userPhone" type="STRING" size="256"/>
+        <Column id="userHomePhone" type="STRING" size="256"/>
+        <Column id="userEmail" type="STRING" size="256"/>
+        <Column id="userZipCode" type="STRING" size="256"/>
+        <Column id="userAddr" type="STRING" size="256"/>
+        <Column id="userAddrDetail" type="STRING" size="256"/>
+        <Column id="userDept" type="STRING" size="256"/>
+        <Column id="userRank" type="STRING" size="256"/>
+        <Column id="userPosition" type="STRING" size="256"/>
+      </ColumnInfo>
+    </Dataset>
+  </Datasets>
+  <Variables>
+    <Variable id="CONTEXT" initval="/nexacro/"/>
+  </Variables>
+  <DataObjects/>
+</AppVariables>

@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="userModify" width="1280" height="720" titletext="New Form" onmouseenter="userModify_onmouseenter" onbindingvaluechanged="userModify_onbindingvaluechanged">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" text="사용자 성" left="280" top="70" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userFirstName" taborder="1" left="360" top="70" width="150" height="30" onkeyup="userFirstName_onkeyup"/>
+        <Static id="Static00_00" taborder="2" text="아이디" left="280" top="121" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userId" taborder="3" left="360" top="121" width="150" height="30" maxlength="12" onkeyup="userId_onkeyup" readonly="true"/>
+        <Static id="Static00_00_00" taborder="4" text="비밀번호" left="280" top="171" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userPw" taborder="5" left="360" top="171" width="150" height="30" password="true" maxlength="15" onkeyup="userPw_onkeyup"/>
+        <Static id="Static00_01" taborder="6" text="연락처" left="280" top="221" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userPhoneM" taborder="7" left="450" top="221" width="75" height="30" maxlength="4"/>
+        <Static id="Static00_00_01" taborder="8" text="자택 연락처" left="280" top="270" width="80" height="30" onclick="Static00_onclick"/>
+        <Static id="Static00_00_00_00" taborder="9" text="개인 이메일" left="280" top="320" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="emailLocal" taborder="10" left="360" top="320" width="100" height="30" onkeyup="emailLocal_onkeyup"/>
+        <Static id="Static00_00_00_01" taborder="11" text="자택주소" left="280" top="371" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userZipCode" taborder="12" left="360" top="371" width="150" height="30" readonly="true"/>
+        <Static id="Static00_01_00" taborder="13" text="소속부서" left="280" top="501" width="80" height="30" onclick="Static00_onclick"/>
+        <Static id="Static00_00_01_00" taborder="14" text="직급" left="280" top="541" width="80" height="30" onclick="Static00_onclick"/>
+        <Static id="Static00_00_00_00_00" taborder="15" text="직책" left="280" top="581" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userAddr" taborder="16" left="360" top="411" width="480" height="30" readonly="true"/>
+        <Edit id="userAddrDetail" taborder="17" left="360" top="451" width="480" height="30"/>
+        <Static id="Static00_02" taborder="18" text="사용자 이름" left="610" top="70" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userMiddleName" taborder="19" left="690" top="70" width="150" height="30" onkeyup="userMiddleName_onkeyup"/>
+        <Static id="Static00_02_00" taborder="20" text="비밀번호 확인" left="610" top="171" width="80" height="30" onclick="Static00_onclick"/>
+        <Edit id="userPwChk" taborder="21" left="690" top="171" width="150" height="30" password="true" maxlength="15" onkeyup="userPwChk_onkeyup"/>
+        <Button id="Button03" taborder="22" text="우편번호 검색" left="518" top="371" width="100" height="30" onclick="Button03_onclick"/>
+        <Button id="Button04" taborder="23" text="등록" left="480" top="660" width="100" height="40" onclick="Button04_onclick"/>
+        <Button id="Button05" taborder="24" text="취소" left="600" top="660" width="100" height="40" onclick="Button05_onclick"/>
+        <Combo id="userDept" taborder="25" text="::: 부서 선택 :::" left="360" top="501" width="150" height="30" innerdataset="innerdataset" onitemchanged="userDept_onitemchanged" value="::: 부서 선택 :::" index="0" datacolumn="datacolumn" codecolumn="codecolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">::: 부서 선택 :::</Col>
+                <Col id="codecolumn">default</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">경영지원</Col>
+                <Col id="codecolumn">경영지원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">기술영업</Col>
+                <Col id="codecolumn">기술영업</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">AI빅데이터</Col>
+                <Col id="codecolumn">AI빅데이터</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">회계경리</Col>
+                <Col id="codecolumn">회계경리</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">물류생산</Col>
+                <Col id="codecolumn">물류생산</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="userRank" taborder="26" text="::: 직급 선택 :::" left="360" top="541" width="150" height="30" innerdataset="innerdataset" datacolumn="datacolumn" codecolumn="codecolumn" value="::: 직급 선택 :::" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">::: 직급 선택 :::</Col>
+                <Col id="codecolumn">default</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">대표이사</Col>
+                <Col id="codecolumn">대표이사</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">전무이사</Col>
+                <Col id="codecolumn">전무이사</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">이사</Col>
+                <Col id="codecolumn">이사</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">부장</Col>
+                <Col id="codecolumn">부장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">차장</Col>
+                <Col id="codecolumn">차장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">과장</Col>
+                <Col id="codecolumn">과장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">대리</Col>
+                <Col id="codecolumn">대리</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">주임</Col>
+                <Col id="codecolumn">주임</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">사원</Col>
+                <Col id="codecolumn">사원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">인턴</Col>
+                <Col id="codecolumn">인턴</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="userPosition" taborder="27" text="::: 직책 선택 :::" left="360" top="581" width="150" height="30" innerdataset="innerdataset" datacolumn="datacolumn" codecolumn="codecolumn" value="::: 직책 선택 :::" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">default</Col>
+                <Col id="datacolumn">::: 직책 선택 :::</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">CEO</Col>
+                <Col id="codecolumn">CEO</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">파트장</Col>
+                <Col id="codecolumn">파트장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">본부장</Col>
+                <Col id="codecolumn">본부장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">팀장</Col>
+                <Col id="codecolumn">팀장</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">팀원</Col>
+                <Col id="codecolumn">팀원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">수석연구원</Col>
+                <Col id="codecolumn">수석연구원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">책임연구원</Col>
+                <Col id="codecolumn">책임연구원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">선임연구원</Col>
+                <Col id="codecolumn">선임연구원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">주임연구원</Col>
+                <Col id="codecolumn">주임연구원</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">연구원</Col>
+                <Col id="codecolumn">연구원</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="userPhoneL" taborder="28" left="540" top="220" width="75" height="30" maxlength="4"/>
+        <Combo id="userPhoneF" taborder="29" text="010" left="360" top="220" width="75" height="30" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="010" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">010</Col>
+                <Col id="codecolumn">010</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">011</Col>
+                <Col id="codecolumn">011</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">016</Col>
+                <Col id="codecolumn">016</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">017</Col>
+                <Col id="codecolumn">017</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">018</Col>
+                <Col id="datacolumn">018</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">019</Col>
+                <Col id="codecolumn">019</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="Static01" taborder="30" text="-" left="440" top="221" width="7" height="25"/>
+        <Static id="Static01_00" taborder="31" text="-" left="530" top="221" width="7" height="25"/>
+        <Edit id="userHomePhoneM" taborder="32" left="450" top="271" width="75" height="30" maxlength="4"/>
+        <Edit id="userHomePhoneL" taborder="33" left="540" top="270" width="75" height="30" maxlength="4"/>
+        <Combo id="userHomePhoneF" taborder="34" text="010" left="360" top="270" width="75" height="30" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="010" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">02</Col>
+                <Col id="codecolumn">02</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">031</Col>
+                <Col id="codecolumn">031</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">032</Col>
+                <Col id="codecolumn">032</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">042</Col>
+                <Col id="codecolumn">042</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">044</Col>
+                <Col id="codecolumn">044</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">051</Col>
+                <Col id="codecolumn">051</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">052</Col>
+                <Col id="codecolumn">052</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">062</Col>
+                <Col id="codecolumn">062</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">063</Col>
+                <Col id="codecolumn">063</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">064</Col>
+                <Col id="codecolumn">064</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="Static01_01" taborder="35" text="-" left="440" top="271" width="7" height="25"/>
+        <Static id="Static01_00_00" taborder="36" text="-" left="530" top="271" width="7" height="25"/>
+        <Static id="Static01_01_00" taborder="37" text="@" left="467" top="321" width="13" height="25"/>
+        <Edit id="emailDomain" taborder="38" left="484" top="320" width="100" height="30" onkeyup="emailDomain_onkeyup"/>
+        <Combo id="selectDomain" taborder="39" text="직접입력" left="594" top="320" width="100" height="30" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="직접입력" index="0" oninnerdatachanged="selectDomain_oninnerdatachanged" onitemchanged="selectDomain_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">직접입력</Col>
+                <Col id="codecolumn">default</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">daum.com</Col>
+                <Col id="codecolumn">daum.com</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">gmail.com</Col>
+                <Col id="codecolumn">gmail.com</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">hanmail.net</Col>
+                <Col id="codecolumn">hanmail.net</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">naver.com</Col>
+                <Col id="codecolumn">naver.com</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">outlook.com</Col>
+                <Col id="codecolumn">outlook.com</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">yahoo.com</Col>
+                <Col id="codecolumn">yahoo.com</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="firstNameValid" taborder="40" text="정확한 값을 입력하세요." left="360" top="100" width="159" height="20" visible="false" color="crimson"/>
+        <Static id="MiddleNameValid" taborder="41" text="정확한 값을 입력하세요." left="691" top="100" width="159" height="20" visible="false" color="crimson"/>
+        <Static id="pwVaild" taborder="42" left="360" top="200" width="480" height="20" visible="false" color="crimson" text="비밀번호는 연속, 반복되지 않은 8~15자리의 영문, 숫자, 특문 조합으로 작성해주세요."/>
+        <Static id="pwChkFail" taborder="43" left="360" top="200" width="260" height="20" visible="false" color="crimson" text="비밀번호 확인이 일치하지 않습니다."/>
+        <Static id="pwChkPass" taborder="44" left="360" top="200" width="260" height="20" visible="false" color="forestgreen" text="비밀번호 확인이 일치합니다."/>
+        <Static id="emailVaild" taborder="45" left="360" top="350" width="208" height="20" visible="false" color="crimson" text="이메일을 형식을 맞추어 작성해주세요."/>
+        <Menu id="Menu00" taborder="46" left="-6" top="-8" width="216" height="908" innerdataset="innerdataset" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="captioncolumn" size="256"/>
+              <Column id="checkboxcolumn" size="256"/>
+              <Column id="enablecolumn" size="256"/>
+              <Column id="hotkeycolumn" size="256"/>
+              <Column id="iconcolumn" size="256"/>
+              <Column id="idcolumn" size="256"/>
+              <Column id="levelcolumn" size="256"/>
+              <Column id="userdatacolumn" size="256"/>
+            </ColumnInfo>
+          </Dataset>
+        </Menu>
+        <Static id="Static02" taborder="47" text="사용자 목록       &gt;" left="48" top="90" width="162" height="112" color="cornsilk" font="16px/normal &quot;Gulim&quot;" border="2px none crimson" onclick="Static02_onclick"/>
+        <Static id="Static02_00" taborder="48" text="사용자 등록       &gt;" left="48" top="202" width="162" height="100" color="cornsilk" font="16px/normal &quot;Gulim&quot;" border="0px none" onclick="Static02_00_onclick"/>
+        <Edit id="userPhone" taborder="49" left="625" top="220" width="125" height="30" visible="false"/>
+        <Edit id="userHomePhone" taborder="50" left="625" top="270" width="125" height="30" visible="false"/>
+        <Edit id="userEmail" taborder="51" left="708" top="320" width="142" height="30" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	var confirm = this.confirm("작성하던 내용을 삭제하고 이동하시겠습니까?");
+	if(confirm){
+		this.go("Base::userList.xfdl");
+	}
+};
+
+this.Static02_00_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	var confirm = this.confirm("작성하던 내용을 삭제하고 이동하시겠습니까?");
+	if(confirm){
+		this.go("Base::userReg.xfdl");
+	}
+};
+
+this.userModify_onbindingvaluechanged = function(obj:nexacro.Form,e:nexacro.BindingValueChangedEventInfo)
+{
+	var phone = this.userPhone.value;
+	this.userPhoneF.set_value(phone.substring(0, 3));
+	this.userPhoneM.set_value(phone.substring(3, 7));
+	this.userPhoneL.set_value(phone.substring(7, 12));
+	
+	var homePhone = this.userHomePhone.value;
+	if(homePhone.substr(0, 2) == 02){
+		this.userHomePhoneF.set_value(homePhone.substring(0, 2));
+		this.userHomePhoneM.set_value(homePhone.substring(2, 5));
+		this.userHomePhoneL.set_value(homePhone.substring(5, 9));
+	}else{
+		this.userHomePhoneF.set_value(homePhone.substring(0, 3));
+		this.userHomePhoneM.set_value(homePhone.substring(3, 6));
+		this.userHomePhoneL.set_value(homePhone.substring(6, 10));
+	}
+	
+	var email = this.userEmail.value;
+	var arr = [];
+	arr = email.split("@");
+	this.emailLocal.set_value(arr[0]);
+	this.emailDomain.set_value(arr[1]);
+	this.selectDomain.set_value(arr[1]);
+	
+};
+
+this.selectDomain_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	if(this.selectDomain.value == "default"){
+		this.emailDomain.set_value("")
+		this.emailDomain.set_readonly(false);
+	}else{
+		this.emailVaild.set_visible(false);
+		this.emailDomain.set_value(this.selectDomain.value);
+		this.emailDomain.set_readonly(true);
+	}
+	
+};
+
+this.userFirstName_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.userFirstName.value == "" || this.userFirstName.value == null){
+		this.firstNameValid.set_visible(false);
+	}else{
+		var result = fn_name_vaild(this.userFirstName.value);
+		if(result == 1){
+			this.firstNameValid.set_visible(false);
+		}else{
+			this.firstNameValid.set_visible(true);
+		}
+	}
+};
+
+this.userMiddleName_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.userMiddleName.value == "" || this.userMiddleName.value == null){
+		this.MiddleNameValid.set_visible(false);
+	}else{
+		var result = fn_name_vaild(this.userMiddleName.value);
+		if(result == 1){
+			this.MiddleNameValid.set_visible(false);
+		}else{
+			this.MiddleNameValid.set_visible(true);
+		}
+	}
+};
+
+this.userPw_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.userPw.value == "" || this.userPw.value == null){
+		this.pwChkFail.set_visible(false);
+		this.pwChkPass.set_visible(false);
+		this.pwVaild.set_visible(false);
+	}else{
+		var result = fn_pw_vaild(this.userPw.value);
+		if(result == 1){
+			if(this.userPwChk.value == "" || this.userPwChk.value == null){
+				this.pwChkFail.set_visible(false);
+				this.pwChkPass.set_visible(false);
+				this.pwVaild.set_visible(false);
+			}else{
+				if(this.userPwChk.value == this.userPw.value){
+					this.pwChkFail.set_visible(false);
+					this.pwChkPass.set_visible(true);
+					this.pwVaild.set_visible(false);
+				}else{
+					this.pwChkFail.set_visible(true);
+					this.pwChkPass.set_visible(false);
+					this.pwVaild.set_visible(false);
+				}
+			}
+		}else{
+			this.pwChkFail.set_visible(false);
+			this.pwChkPass.set_visible(false);
+			this.pwVaild.set_visible(true);
+		}
+	}
+};
+
+this.userPwChk_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.userPwChk.value == "" || this.userPwChk.value == null){
+		this.pwChkFail.set_visible(false);
+		this.pwChkPass.set_visible(false);
+	}else{
+		if(this.pwVaild.visible == false){
+			if(this.userPwChk.value == this.userPw.value){
+				this.pwChkFail.set_visible(false);
+				this.pwChkPass.set_visible(true);
+			}else{
+				this.pwChkFail.set_visible(true);
+				this.pwChkPass.set_visible(false);
+			}
+		}
+	}
+};
+
+this.emailLocal_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.emailLocal.value == "" || this.emailLocal.value == null){
+		this.emailVaild.set_visible(false);
+	}else{
+		var localVal = this.emailLocal.value;
+		var domainVal = this.emailDomain.value;
+		var result = fn_email_vaild(localVal, domainVal);
+		if(result == 1){
+			this.emailVaild.set_visible(false);
+		}else{
+			this.emailVaild.set_visible(true);
+		}
+	}
+};
+
+this.emailDomain_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(this.emailDomain.value == "" || this.emailDomain.value == null){
+		if(this.emailVaild.visible != true){
+			this.emailVaild.set_visible(false);
+		}
+	}else{
+		var localVal = this.emailLocal.value;
+		var domainVal = this.emailDomain.value;
+		var result = fn_email_vaild(localVal, domainVal);
+		if(result == 1){
+			this.emailVaild.set_visible(false);
+		}else{
+			this.emailVaild.set_visible(true);
+		}
+	}
+};
+
+
+fn_name_vaild = function(value){
+	console.log(value);
+	var name = new RegExp("[^가-힣\x20]");
+	var result = 0;
+	if(name.exec(value) == null){
+		result = 1;
+	}else{
+		result = 0;
+	}
+	return result;
+}
+
+fn_pw_vaild = function(value){
+	console.log(value);
+	var pw = new RegExp("^(?=.*[0-9])(?=.*[a-zA-z])(?=.*[!@#$%^&+=]).{8,15}$");
+	var tmp = ""; // 반복
+	var cnt = 0; // 반복
+	var cntc = 0; // 연속
+	var cntc2 = 0; // 연속
+	var tmpc = ""; // 연속
+	var tmpc2 = ""; // 연속
+	var tmpc3 = ""; // 연속
+	var result = 0;
+	
+	// 반복
+	for(i = 0; i < value.length; i++){
+		tmp = value.charAt(i);
+		if(tmp == value.charAt(i+1) && tmp == value.charAt(i+2)){
+			cnt = cnt + 1;
+		}
+	}
+	
+	// 연속
+	for(i = 0; i < value.length; i++){
+		tmpc = value.charAt(i);
+		tmpc2 = value.charAt(i+1);
+		tmpc3 = value.charAt(i+2);
+		if(tmpc.charCodeAt(0) - tmpc2.charCodeAt(0) == 1 && tmpc2.charCodeAt(0) - tmpc3.charCodeAt(0) == 1){
+			cntc = cntc + 1;
+		}
+		if(tmpc.charCodeAt(0) - tmpc2.charCodeAt(0) == -1 && tmpc2.charCodeAt(0) - tmpc3.charCodeAt(0) == -1){
+			cntc2 = cntc2 + 1;
+		}
+	}
+	
+	if(pw.exec(value) == null || cnt > 0 || cntc > 0 || cntc2 > 0){
+		result = 0;
+	}else if(pw.exec(value) != null && cnt == 0 && cntc == 0 && cntc2 == 0){
+		result = 1;
+	}
+	return result;
+}
+
+fn_email_vaild = function(localVal, domainVal){
+	var local = new RegExp("^[a-z]+[a-z0-9]{4,}");
+	var domain = new RegExp("^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{1,5}");
+	var result = 0;
+	if(localVal != null && domainVal != null){
+		if(local.exec(localVal) == null || domain.exec(domainVal) == null){
+			result = 0;
+		}else{
+			result = 1;
+		}
+		return result;
+	}
+	
+}
+
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var oArg = {
+				};
+	
+	//modal popup open call
+	this.gfn_showModal("popupPostcode", oArg, "Base::postcodedaumapi_popup.xfdl", "popupCallBack", this, 650, 100, 600, 470);
+};
+
+this.gfn_showModal = function (sPopupId, arrArguments, sPopupUrl, popupCallback, obj, nPopupLeft, nPopupTop, nPopupWidth, nPopupHeight)
+{
+	// child frame 생성
+	var childFrame = new ChildFrame();
+	
+	// parent frame 정의
+	var parentFrame = obj.getOwnerFrame();
+	
+	//child frame 초기화
+	childFrame.init(sPopupId, nPopupLeft, nPopupTop, nPopupWidth, nPopupHeight, null, null, sPopupUrl);
+	
+	// Modal Dialog 추가 옵션
+	//autosize default true
+	childFrame.set_autosize(false);	
+	//statusbar default true
+	childFrame.set_showtitlebar(false);
+	
+	// 동적으로 생성한 ChildFrame을 Modal Dialog로 보여줌.
+	childFrame.showModal(parentFrame, arrArguments, obj, popupCallback, true);
+};
+
+this.popupCallBack = function(sFormId, sArg)
+{
+	
+	if(sFormId=="popupPostcode")
+	{
+		if(this.gfn_isNull(sArg))
+		{
+			this.userZipCode.set_value(this.postcode);
+			this.userAddr.set_value(this.address1);
+		}
+		
+		//sArg == 'x' : 닫기버튼 클릭
+	}
+}
+
+this.gfn_isNull = function (pvVal)
+{
+	if (new String(pvVal).valueOf() == "undefined") 
+	{
+		return true;
+	}
+	if (pvVal == null) 
+	{
+		return true;
+	}
+	if (("x" + pvVal == "xNaN") && (new String(pvVal.length).valueOf() == "undefined")) 
+	{
+		return true;
+	}
+	if (pvVal.length == 0) 
+	{
+		return true;
+	}
+
+	return false;
+}
+
+this.Button05_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var confirm = this.confirm("등록을 취소하시겠습니까?");
+	if(confirm){
+		this.go("Base::userList.xfdl");
+	}
+};
+
+this.Button04_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var phoneM = this.userPhoneM.value;
+	var phoneL = this.userPhoneL.value;
+	var homePhoneM = this.userHomePhoneM.value;
+	var homePhoneL = this.userHomePhoneL.value;
+	
+	if(this.userFirstName.value == null || this.userFirstName.value == ""){
+		alert("이름을 입력해주세요.");
+		return false;
+	}else if(this.userMiddleName.value == null || this.userMiddleName.value == ""){
+		alert("이름을 입력해주세요.");
+		return false;
+	}else if(this.firstNameValid.visible == true || this.MiddleNameValid.visible == true){
+		alert("이름을 정확히 입력해주세요.");
+		return false;
+	}else if(this.userPw.value == null || this.userPw.value == ""){
+		alert("비밀번호를 입력해주세요.");
+		return false;
+	}else if(this.pwVaild.visible == true){
+		alert("비밀번호를 형식에 맞춰 입력해주세요.");
+		return false;
+	}else if(this.userPwChk.value == null || this.userPwChk.value == ""){
+		alert("비밀번호 확인란을 입력해주세요.");
+		return false;
+	}else if(this.userPw.value != this.userPwChk.value){
+		alert("비밀번호 확인이 일치하지 않습니다.");
+		return false;
+	}else if(this.userPhoneF.value == null || this.userPhoneM.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;	
+	}else if(this.userPhoneM.value == null || this.userPhoneM.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;
+	}else if(this.userPhoneL.value == null || this.userPhoneL.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;	
+	}else if(this.userHomePhoneF.value == null || this.userHomePhoneM.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;	
+	}else if(this.userHomePhoneM.value == null || this.userHomePhoneM.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;
+	}else if(this.userHomePhoneL.value == null || this.userHomePhoneL.value == ""){
+		alert("연락처를 입력해주세요.");
+		return false;
+	}else if(phoneM.length < 4 || phoneL.length < 4 || homePhoneM.length < 3 || homePhoneL.length < 4){
+		alert("연락처를 정확히 입력해주세요.");
+		return false;
+	}else if(this.emailLocal.value == null || this.emailLocal.value == ""){
+		alert("이메일을 입력해주세요.");
+		return false;
+	}else if(this.emailDomain.value == null || this.emailDomain.value == "" || this.emailDomain.value == "default"){
+		alert("이메일을 입력해주세요.");
+		return false;
+	}else if(this.emailVaild.visible == true){
+		alert("이메일을 형식에 맞춰 작성해주세요.");
+		return false;
+	}else if(this.userZipCode.value == null || this.userZipCode.value == ""){
+		alert("주소를 입력해주세요.");
+		return false;
+	}else if(this.userAddr.value == null || this.userAddr.value == ""){
+		alert("주소를 입력해주세요.");
+		return false;
+	}else if(this.userAddrDetail.value == null || this.userAddrDetail.value == ""){
+		alert("주소를 입력해주세요.");
+		return false;
+	}else if(this.userDept.value == "default"){
+		alert("부서를 선택해주세요.");
+		return false;
+	}else if(this.userRank.value == "default"){
+		alert("직급을 선택해주세요.");
+		return false;
+	}else if(this.userPosition.value == "default"){
+		alert("직책을 선택해주세요.");
+		return false;
+	}
+	
+	var id = "userModify";  
+	var url = "userModify.do";
+	var reqDs = "";
+	var respDs = "";
+	var args = "";
+	var callback = "received";
+	var nDataType = "0";
+	var userPhoneVal = (this.userPhoneF.value + this.userPhoneM.value + this.userPhoneL.value);
+	var userHomePhoneVal = (this.userHomePhoneF.value + this.userHomePhoneM.value + this.userHomePhoneL.value);
+	var userEmailVal = (this.emailLocal.value + "@" + this.emailDomain.value);
+	
+	args = "userFirstNameEdit=" + this.userFirstName.value + " " + 
+		   "userMiddleNameEdit=" + this.userMiddleName.value + " " +
+		   "userIdEdit=" + this.userId.value + " " +
+		   "userPwEdit=" + this.userPw.value + " " +
+		   "userPhoneEdit=" + userPhoneVal + " " +
+		   "userHomePhoneEdit=" + userHomePhoneVal + " " +
+		   "userZipCodeEdit=" + this.userZipCode.value + " " +
+		   "userAddrEdit=" + this.userAddr.value + " " +
+		   "userAddrDetailEdit=" + this.userAddrDetail.value + " " +
+		   "userEmailEdit=" + userEmailVal + " " +
+		   "userPostionCombo=" + this.userPosition.value + " " +
+		   "userDeptCombo=" + this.userDept.value + " " +
+		   "userRankCombo=" + this.userRank.value;
+		   
+	this.transaction(id, url, reqDs, respDs, args, callback ,nDataType);
+	
+	this.received = function(id, code, message, url)
+	{
+		if (code == 1) {
+			this.alert("수정 되었습니다.");
+			this.go("Base::userList.xfdl");
+		} else {
+			this.alert("실패ㅠㅠ");
+		}
+	}
+};
+]]></Script>
+    <Objects/>
+    <Bind>
+      <BindItem id="item0" compid="userFirstName" propid="value" datasetid="Dataset01" columnid="userFirstName"/>
+      <BindItem id="item1" compid="userMiddleName" propid="value" datasetid="Dataset01" columnid="userMiddleName"/>
+      <BindItem id="item2" compid="userId" propid="value" datasetid="Dataset01" columnid="userId"/>
+      <BindItem id="item3" compid="userPw" propid="value" datasetid="Dataset01" columnid="userPw"/>
+      <BindItem id="item4" compid="userPhone" propid="value" datasetid="Dataset01" columnid="userPhone"/>
+      <BindItem id="item5" compid="userHomePhone" propid="value" datasetid="Dataset01" columnid="userHomePhone"/>
+      <BindItem id="item6" compid="userEmail" propid="value" datasetid="Dataset01" columnid="userEmail"/>
+      <BindItem id="item7" compid="userZipCode" propid="value" datasetid="Dataset01" columnid="userZipCode"/>
+      <BindItem id="item8" compid="userAddr" propid="value" datasetid="Dataset01" columnid="userAddr"/>
+      <BindItem id="item9" compid="userAddrDetail" propid="value" datasetid="Dataset01" columnid="userAddrDetail"/>
+      <BindItem id="item10" compid="userDept" propid="value" datasetid="Dataset01" columnid="userDept"/>
+      <BindItem id="item11" compid="userRank" propid="value" datasetid="Dataset01" columnid="userRank"/>
+      <BindItem id="item12" compid="userPosition" propid="value" datasetid="Dataset01" columnid="userPosition"/>
+    </Bind>
+  </Form>
+</FDL>

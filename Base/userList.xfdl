@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="userList" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280" stepcount="0">
+        <Button id="Button00" taborder="0" text="조회" left="690" top="51" width="80" height="40" onclick="Button00_onclick"/>
+        <Combo id="Combo00" taborder="1" text="부서" left="270" top="50" width="100" height="40" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="userDept" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">userId</Col>
+                <Col id="datacolumn">아이디</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">userDept</Col>
+                <Col id="datacolumn">부서</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">userName</Col>
+                <Col id="datacolumn">이름</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">userRank</Col>
+                <Col id="datacolumn">직급</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">userPosition</Col>
+                <Col id="datacolumn">직책</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="Edit00" taborder="2" left="380" top="50" width="300" height="40"/>
+        <Button id="Button01" taborder="3" text="등록" left="810" top="51" width="80" height="40" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="수정" left="900" top="51" width="80" height="40" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="5" text="삭제" left="990" top="50" width="80" height="40" onclick="Button03_onclick"/>
+        <Grid id="Grid00" taborder="6" left="270" top="100" width="800" height="400" treeusecheckbox="true" onheadclick="Grid00_onheadclick" onclick="clickHeadCheckBox" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="0"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="150"/>
+                <Column size="150"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="0" displaytype="checkboxcontrol" edittype="checkbox" suppress="0"/>
+                <Cell col="1" text="아이디"/>
+                <Cell col="2" text="부서"/>
+                <Cell col="3" text="이름"/>
+                <Cell col="4" text="직급"/>
+                <Cell col="5" text="직책"/>
+                <Cell col="6" text="이메일"/>
+                <Cell col="7" text="연락처"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:chk" displaytype="checkboxcontrol" edittype="checkbox" expr="expr:chk=='Y'?'1':'0'"/>
+                <Cell col="1" text="bind:아이디"/>
+                <Cell col="2" text="bind:부서"/>
+                <Cell col="3" text="bind:이름"/>
+                <Cell col="4" text="bind:직급"/>
+                <Cell col="5" text="bind:직책"/>
+                <Cell col="6" text="bind:이메일"/>
+                <Cell col="7" text="bind:연락처"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Menu id="Menu00" taborder="7" left="-6" top="-8" width="216" height="908" innerdataset="innerdataset" captioncolumn="captioncolumn" checkboxcolumn="checkboxcolumn" enablecolumn="enablecolumn" hotkeycolumn="hotkeycolumn" iconcolumn="iconcolumn" idcolumn="idcolumn" levelcolumn="levelcolumn" userdatacolumn="userdatacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="captioncolumn" size="256"/>
+              <Column id="checkboxcolumn" size="256"/>
+              <Column id="enablecolumn" size="256"/>
+              <Column id="hotkeycolumn" size="256"/>
+              <Column id="iconcolumn" size="256"/>
+              <Column id="idcolumn" size="256"/>
+              <Column id="levelcolumn" size="256"/>
+              <Column id="userdatacolumn" size="256"/>
+            </ColumnInfo>
+          </Dataset>
+        </Menu>
+        <Static id="Static02" taborder="8" text="사용자 목록       &gt;" left="48" top="90" width="162" height="112" color="cornsilk" font="16px/normal &quot;Gulim&quot;" border="2px none crimson" onclick="Static02_onclick"/>
+        <Static id="Static02_00" taborder="9" text="사용자 등록       &gt;" left="48" top="202" width="162" height="100" color="cornsilk" font="16px/normal &quot;Gulim&quot;" border="0px none" onclick="Static02_00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Static02_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.go("Base::userList.xfdl");
+};
+
+this.Static02_00_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.go("Base::userReg.xfdl");
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.go("Base::userReg.xfdl");
+};
+
+var id = "getUserList";  
+var url = "userList.do";
+var reqDs = "";
+var respDs = "Dataset00=userList";
+var args = "";
+var callback = "received";
+var nDataType = "0" 
+
+this.transaction(id, nexacro.getApplication().CONTEXT + url, reqDs, respDs, args, callback);    
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id = "getUserSearchList";  
+	var url = "userList.do";
+	var reqDs = "";
+	var respDs = "Dataset00=userList";
+	var args = "";
+	var callback = "received";
+	var nDataType = "0"
+	
+	args = "SearchCondition=" +this.Combo00.value + " " + "SearchKeyword=" + this.Edit00.value;
+	this.transaction(id, url, reqDs, respDs, args, callback ,nDataType);
+};
+
+var selected = [];
+this.Dataset00_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{	
+	var target = this.Dataset00.getColumn(e.row, "아이디");
+		// chk 컬럼인 경우
+	if(e.columnid == "chk") {
+		// 다른 이벤트가 동작하지 않도록 설정
+		obj.enableevent = false;  //false can stop event temporarily  
+		// 변경된 값이 1(체크가 된 경우)인경우
+		if(e.newvalue == '1') {
+			// 1인 경우 Dataset의 chk 값을 Y로 변경
+			obj.setColumn(e.row,"chk",'Y');
+			// 선택 대상 push
+			selected.push(target);
+			console.log(selected, "push!");
+		} else if(e.newvalue == '0') {
+			// 0인 경우 Dataset의 chk 값을 N로 변경
+			obj.setColumn(e.row,"chk",'N');  
+			// 선택해제 대상 pop
+			selected.pop(target);
+			console.log(selected, "pop!");
+		}
+		// 다시 이벤트가 정상 동작하도록 설정
+		obj.enableevent = true;
+	}
+};
+
+this.Grid00_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	//this.Grid00.setCellProperty("Head","","text","1");
+	// 첫 번째 컬럼인 경우
+	trace(obj.getCellProperty("Head", 0, "text"), "!!!");
+	
+ 	if (e.col == 0) { 
+ 		// Dataset의 레코드 개수 만큼 반복
+		if(obj.getCellProperty("Head", 0, "text") == 0 || obj.getCellProperty("Head", 0, "text") == null){
+		 	for(var nRow=0; nRow < this.Dataset00.getRowCount(); nRow++) {
+				// chk 컬럼의 값을 Y로 변경
+				this.Dataset00.setColumn(nRow, "chk", 'Y');
+				obj.setCellProperty("Head", 0, "text", 1);
+			}
+		}else{
+			for(var nRow=0; nRow < this.Dataset00.getRowCount(); nRow++) {
+				// chk 컬럼의 값을 N으로 변경
+				this.Dataset00.setColumn(nRow, "chk", 'N');
+				obj.setCellProperty("Head", 0, "text", 0);
+				}
+			}
+ 	}
+	
+	// 전체선택, 해제 push pop
+	var i = this.Dataset00.getRowCount();
+	for(var n  = 0 ;  n < i ; n++){
+		var target = this.Dataset00.getColumn(n,1)
+		if(this.Dataset00.getColumn(n,0) == 'Y'){
+			selected.push(target);
+			trace(selected, "push..");
+		}else{
+			selected.pop(target);
+			trace(selected, "pop..")
+		}
+	}
+// 		if (e.col == 0) {
+// 		this.clickHeadCheckBox(obj, "CHK");
+// 	}
+
+
+};
+
+this.clickHeadCheckBox = function (obj, strColName)
+{		
+	var headerCell = 0
+	trace(headerCell);
+
+	var checkValue = "Y";
+	if(obj.getCellProperty("Head", headerCell, "displaytype") == "checkboxcontrol") {
+		if (obj.getCellProperty("Head", headerCell, "text") == "Y") { //현재 체크박스 값과 반대되게
+		    checkValue = "N";
+		} else {
+			checkValue = "Y";
+		}
+	}
+	
+	obj.setCellProperty("Head", headerCell, "expr", checkValue); //헤더 체크박스 값 변경
+	
+	var objDataset = obj.getBindDataset(); //그리드에 바인드되어있는 dataset 가져옴
+	if(objDataset.getRowCount() > 0) {
+		objDataset.set_enableevent(false); //이벤트 비활성화
+		for (var i=0; i<objDataset.getRowCount(); i++) {			
+		    objDataset.setColumn(i, strColName, checkValue); //체크박스를 checkValue로 설정
+		}
+		objDataset.set_enableevent(true); //이벤트 활성화
+	}
+};
+
+// 수정
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(selected.length == 0){
+		alert("수정할 대상을 선택해주세요!");
+	}else if(selected.length > 1){
+		alert("1명만 선택해주세요!");
+	}else{
+		var id = "getModifyTargetInfo";  
+		var url = "modifyTargetInfo.do";
+		var reqDs = "";
+		var respDs = "Dataset01=modifyTargetInfo";
+		var callback = "received";
+		var nDataType = "0" 
+		var args = "modifyTargetId=" + selected;
+		
+		this.go("Base::userModify.xfdl");
+
+		this.transaction(id, nexacro.getApplication().CONTEXT + url, reqDs, respDs, args, callback);
+	}
+};
+
+// 삭제
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+	if(selected.length == 0){
+		alert("삭제할 대상을 선택해주세요!");
+	}else{
+		var confirm = this.confirm("정말 삭제하시겠습니까?");
+		if(confirm){
+			var id = "userDelete";  
+			var url = "userDelete.do";
+			var reqDs = "";
+			var respDs = "Dataset00=userList";
+			var callback = "fn_callback";
+			var args = "userIdList=" + selected;	
+			
+			this.transaction(id, url, reqDs, respDs, args, callback);
+		}
+	}
+	
+};
+
+this.fn_callback = function(sId,Code,sErrorMSG)
+{
+	if (Code == 1) {
+		this.alert("삭제했습니다.");
+		this.go("Base::userList.xfdl");
+	} else {
+		this.alert("실패ㅠㅠ");
+	}
+}
+
+
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00" oncolumnchanged="Dataset00_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="아이디" type="STRING" size="256"/>
+          <Column id="부서" type="STRING" size="256"/>
+          <Column id="이름" type="STRING" size="256"/>
+          <Column id="직급" type="STRING" size="256"/>
+          <Column id="직책" type="STRING" size="256"/>
+          <Column id="이메일" type="STRING" size="256"/>
+          <Column id="연락처" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="D:\eunseungho\nexaworkspace\egovnexatest\" generated="D:\eunseungho\egovworkspace\eGovFrameDev-4.0.0-64bit\workspace\com.esh.nexacro\src\main\webapp\"><File url="typedefinition.xml" checksum="20221209175053" errormsg=""/><File url="appvariables.xml" checksum="20221212011609" errormsg=""/><File url="environment.xml" checksum="20221204214034" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20221204214038" errormsg=""/><File url="Application_Desktop.xadl" checksum="20221207140713" errormsg=""/><File url="Base\userList.xfdl" checksum="20221212104512" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20221006091054" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20221006091054" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20221006091050" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20221006091050" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20221006091052" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20221006091054" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20221006091050" errormsg=""/><File url="Base\userReg.xfdl" checksum="20221212032613" errormsg=""/><File url="Base\postcodedaumapi_popup.xfdl" checksum="20221212155837" errormsg=""/><File url="Base\userModify.xfdl" checksum="20221212033806" errormsg=""/></Info>
+  </GenInfo>
+</root>
